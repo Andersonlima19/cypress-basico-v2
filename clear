@@ -1,0 +1,31 @@
+warning: in the working copy of 'cypress/integration/CAC-TAT.spec.js', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/cypress/integration/CAC-TAT.spec.js b/cypress/integration/CAC-TAT.spec.js[m
+[1mindex 32ddde9..c6ad1ce 100644[m
+[1m--- a/cypress/integration/CAC-TAT.spec.js[m
+[1m+++ b/cypress/integration/CAC-TAT.spec.js[m
+[36m@@ -126,7 +126,7 @@[m [mit('marca cada tipo de atendimento', function(){[m
+ [m
+ })[m
+ [m
+[31m-it.only('seleciona um arquivo simulando um drag-and-drop', function(){[m
+[32m+[m[32mit('seleciona um arquivo simulando um drag-and-drop', function(){[m
+     cy.get('input[type="file"]#file-upload').should('not.have.value')[m
+     .selectFile('./cypress/fixtures/example.json', {action: 'drag-drop'})[m
+     .should(function($input){[m
+[36m@@ -136,6 +136,15 @@[m [mit.only('seleciona um arquivo simulando um drag-and-drop', function(){[m
+ [m
+ })[m
+ [m
+[32m+[m[32mit('seleciona um arquivo utilizando uma fixture para a qual foi dada um alias', function(){[m
+[32m+[m[32m  cy.fixture('example.json').as('samplefile')[m
+[32m+[m[32m  cy.get('input[type="file"]').selectFile('@samplefile')[m
+[32m+[m[32m  .should(function($input){[m
+[32m+[m[32m   expect($input[0].files[0].name).to.equal('example.json')[m
+[32m+[m
+[32m+[m[32m})[m
+[32m+[m[41m [m
+[32m+[m[32m })[m
+ [m
+ [m
+ })[m
+\ No newline at end of file[m
